@@ -1,0 +1,66 @@
+.container {
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-between;
+}
+
+.colLeft {
+	width: 60%;
+}
+
+.colRight {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.checkIn {
+	margin: 0 0 5px;
+	font-size: 14px;
+	line-height: 22px;
+	color: #878787;
+}
+
+.like {
+	width: 23px;
+	height: 20px;
+	background-image: url('../../../../../img/like.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.like:hover {
+	cursor: pointer;
+	background-image: url('../../../../../img/likeHover.svg');
+}
+.likeActive {
+	width: 23px;
+	height: 20px;
+	cursor: pointer;
+	background-image: url('../../../../../img/likeActive.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.starsContainer {
+	display: flex;
+}
+.star {
+	margin: 0 4px 0 0;
+	width: 17px;
+	height: 17px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.starGold {
+	background-image: url('../../../../../img/starGold.svg');
+}
+.starGrey {
+	background-image: url('../../../../../img/starGrey.svg');
+}
+
+.price {
+	font-weight: 300;
+	font-size: 11px;
+	color: #878787;
+}

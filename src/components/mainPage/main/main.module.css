@@ -1,0 +1,7 @@
+.wrapper {
+	padding: 0 100px 32px;
+	height: calc(100vh - 92px);
+	display: flex;
+	flex-grow: 1;
+	box-sizing: border-box;
+}

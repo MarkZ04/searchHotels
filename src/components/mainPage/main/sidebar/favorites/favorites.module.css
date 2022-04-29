@@ -1,0 +1,32 @@
+.hotelCardContainer {
+	margin: 0 0 15px;
+	padding: 0 0 15px;
+	border-bottom: 1px solid #87878743;
+	box-sizing: border-box;
+}
+
+.card {
+	padding: 20px;
+	max-height: calc(100% - 304px - 20px);
+	/* flex-grow: 1; */
+	box-sizing: border-box;
+}
+
+.title {
+	margin: 0 0 10px 0;
+}
+
+.hotelsList {
+	padding: 0 10px 0 0;
+	overflow-y: scroll;
+}
+.hotelsList::-webkit-scrollbar {
+	width: 2px;
+	background-color: #e7e7e7;
+	border-radius: 2px;
+}
+.hotelsList::-webkit-scrollbar-thumb {
+	width: 2px;
+	background-color: #41522e;
+	border-radius: 2px;
+}

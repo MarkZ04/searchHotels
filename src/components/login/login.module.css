@@ -1,0 +1,30 @@
+.loginPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+}
+
+.loginPage::after {
+	position: absolute;
+	content: '';
+	background-color: rgb(173, 119, 78);
+	background-image: url('../../img/bgrLoginPage.png');
+	background-size: cover;
+	opacity: 0.4;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+}
+
+.title {
+	align-self: center;
+}
+
+.input {
+	width: 345px;
+}

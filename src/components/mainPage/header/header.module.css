@@ -1,0 +1,25 @@
+.header {
+	padding: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.text {
+	margin: 0;
+}
+
+.logOut {
+	margin: 0;
+	display: flex;
+	line-height: 20px;
+	color: #41522e;
+}
+
+.logOut::after {
+	margin: 0 0 0 15px;
+	display: block;
+	content: url('../../../img/logOut.svg');
+	width: 18px;
+	height: 18px;
+}

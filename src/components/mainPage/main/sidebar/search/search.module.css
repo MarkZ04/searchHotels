@@ -1,0 +1,18 @@
+.search {
+	margin: 0 0 20px 0;
+}
+
+.card {
+	padding: 20px;
+}
+
+.subtitle {
+	margin: 0 0 7px 0;
+	font-family: 'Roboto-Medium';
+	line-height: 19px;
+}
+
+::-webkit-calendar-picker-indicator {
+	background: url('../../../../../img/calendar.svg') no-repeat center;
+	background-size: contain;
+}
