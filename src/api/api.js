@@ -13,7 +13,8 @@ export const hotelsApi = {
 				`cache.json?location=${cityName}&currency=rub&checkIn=${checkIn}&checkOut=${checkOut}&limit=10`
 			)
 			.then((response) => {
-				return response.data;
-			});
+				if (response.status === 200) return response.data;
+			})
+			.catch((err) => console.log(err));
 	},
 };

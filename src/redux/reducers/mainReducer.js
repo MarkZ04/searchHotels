@@ -93,6 +93,11 @@ export const setFavoritesAC = (hotel) => ({ type: SET_FAVORITES, hotel });
 export const getHotelsTC = (cityName, checkIn, checkOut) => {
 	return (dispatch) => {
 		hotelsApi.getHotels(cityName, checkIn, checkOut).then((hotels) => {
+			if (hotels === undefined) {
+				dispatch(setHotelsListAC(['Error']));
+				return;
+			}
+
 			hotels.forEach((h) => (h.isFavorites = false));
 			dispatch(setHotelsListAC(hotels));
 		});
