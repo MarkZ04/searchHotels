@@ -4,6 +4,7 @@ import { Content } from './content';
 import {
 	toggleIsFavoritesAC,
 	setFavoritesAC,
+	sortFavoritesAC,
 } from '../../../../redux/reducers/mainReducer';
 
 const ContentContainer = (props) => {
@@ -16,10 +17,12 @@ const mapStateToProps = (state) => {
 		checkIn: state.mainPage.checkIn.split('-').reverse().join('.'),
 		hotels: state.mainPage.hotels,
 		favorites: state.mainPage.favorites,
+		sortFavorites: state.mainPage.sortFavorites,
 	};
 };
 
 export default connect(mapStateToProps, {
 	toggleIsFavoritesAC,
 	setFavoritesAC,
+	sortFavoritesAC,
 })(ContentContainer);

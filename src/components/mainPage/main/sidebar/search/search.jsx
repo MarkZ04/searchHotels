@@ -24,6 +24,7 @@ export const Search = (props) => {
 	};
 
 	const onSearch = () => {
+		console.log(location); // исправить заглавную букву
 		let cityName = location[0].toUpperCase() + location.slice(1).toLowerCase();
 
 		props.setCityNameAC(cityName);

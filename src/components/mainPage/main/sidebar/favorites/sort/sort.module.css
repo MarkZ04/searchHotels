@@ -1,0 +1,46 @@
+.container {
+	margin: 0 0 30px;
+	display: flex;
+}
+
+.sort {
+	padding: 4px 30px 4px 8px;
+	color: #e5e5e5;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	cursor: pointer;
+	position: relative;
+}
+.sort:first-child {
+	margin: 0 8px 0 0;
+}
+.sort::before,
+.sort::after {
+	display: block;
+	content: '';
+	position: absolute;
+	right: 12px;
+	width: 0;
+	height: 0;
+	border: 6px solid;
+}
+.sort::before {
+	top: 1px;
+	border-color: transparent transparent #e5e5e5 transparent;
+}
+.sort::after {
+	bottom: 1px;
+	border-color: #e5e5e5 transparent transparent transparent;
+}
+
+.activeAscending,
+.activeDescending {
+	color: #41522e;
+	border: 1px solid #41522e;
+}
+.activeAscending::before {
+	border-color: transparent transparent #41522e transparent;
+}
+.activeDescending::after {
+	border-color: #41522e transparent transparent transparent;
+}

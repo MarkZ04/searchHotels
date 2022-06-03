@@ -6,6 +6,8 @@ const SET_CHECK_IN = 'SET_CHECK_IN';
 const SET_CHECK_OUT = 'SET_CHECK_OUT';
 const TOGGLE_IS_FAVORITES = 'TOGGLE_IS_FAVORITES';
 const SET_FAVORITES = 'SET_FAVORITES';
+const SET_SORT_FAVORITES = 'SET_SORT_FAVORITES';
+const SORT_FAVORITES = 'SORT_FAVORITES';
 
 export const today = () => {
 	let date = new Date().toLocaleDateString();
@@ -23,6 +25,7 @@ const initialState = {
 	checkIn: today(),
 	checkOut: dateCheckOut(today()),
 	favorites: [],
+	sortFavorites: { sortMethod: 'Stars', sortAscending: true },
 };
 
 export const mainReducer = (state = initialState, action) => {
@@ -72,6 +75,35 @@ export const mainReducer = (state = initialState, action) => {
 					: [...state.favorites, action.hotel],
 			};
 
+		case SET_SORT_FAVORITES:
+			return {
+				...state,
+				sortFavorites: {
+					...state.sortFavorites,
+					sortMethod: action.sortMethod,
+					sortAscending: action.sortAscending,
+				},
+			};
+
+		case SORT_FAVORITES:
+			return {
+				...state,
+				favorites: [...state.favorites].sort((h1, h2) => {
+					switch (action.sortMethod) {
+						case 'Stars':
+							if (action.sortAscending) {
+								return h1.stars - h2.stars;
+							}
+							return h2.stars - h1.stars;
+
+						case 'Price':
+							if (action.sortAscending) {
+								return h1.price - h2.price;
+							}
+							return h2.price - h1.price;
+					}
+				}),
+			};
 		default:
 			return state;
 	}
@@ -88,6 +120,16 @@ export const toggleIsFavoritesAC = (hotelId, bool) => ({
 	bool,
 });
 export const setFavoritesAC = (hotel) => ({ type: SET_FAVORITES, hotel });
+export const setSortFavoritesAC = (sortMethod, sortAscending) => ({
+	type: SET_SORT_FAVORITES,
+	sortMethod,
+	sortAscending,
+});
+export const sortFavoritesAC = (sortMethod, sortAscending) => ({
+	type: SORT_FAVORITES,
+	sortMethod,
+	sortAscending,
+});
 
 // Thunk Creators
 export const getHotelsTC = (cityName, checkIn, checkOut) => {

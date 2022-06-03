@@ -21,6 +21,8 @@ export const Content = (props) => {
 					isFavorites={hotel.isFavorites}
 					toggleIsFavoritesAC={props.toggleIsFavoritesAC}
 					setFavoritesAC={props.setFavoritesAC}
+					sortFavoritesAC={props.sortFavoritesAC}
+					sortFavorites={props.sortFavorites}
 				/>
 			</div>
 		);

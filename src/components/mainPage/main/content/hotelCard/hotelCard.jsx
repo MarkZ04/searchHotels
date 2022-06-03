@@ -30,6 +30,10 @@ export const HotelCard = (props) => {
 			price: props.price,
 			isFavorites: !props.isFavorites,
 		});
+		props.sortFavoritesAC(
+			props.sortFavorites.sortMethod,
+			props.sortFavorites.sortAscending
+		);
 	};
 
 	return (
