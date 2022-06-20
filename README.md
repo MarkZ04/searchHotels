@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+./vendor/bin/sail up -d
+./vendor/bin/sail ps
+./vendor/bin/sail npm run watch
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
